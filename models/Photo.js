@@ -7,6 +7,9 @@ const PhotoSchema = new mongoose.Schema(
       x: { type: Number, required: true },
       y: { type: Number, required: true },
     },
+    diff: { type: String, required: false },
+    photographer: { type: String, required: false },
+    status: { type: String, required: false },
   },
   { timestamps: true }
 );
