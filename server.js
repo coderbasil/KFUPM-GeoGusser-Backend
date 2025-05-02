@@ -5,7 +5,8 @@ import photos from "./routes/photos.js";
 
 const app = express();
 const PORT = 5000;
-const MONGO_URI = "";
+const MONGO_URI =
+  "mongodb+srv://bsuli1424:bsuli1424@cluster0.tjdau4y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 app.use(cors());
 app.use(express.json());
