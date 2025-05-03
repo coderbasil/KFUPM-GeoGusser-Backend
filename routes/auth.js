@@ -34,7 +34,7 @@ router.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
     const user = new User({ email, password: hashedPassword });
     await user.save();
-    res.status(201).json({ message: 'User  created successfully' });
+    res.status(201).json({ message: 'User  created successfully' , role: user.role});
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }
@@ -67,7 +67,7 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ message: 'Invalid email or password' });
     }
 
-    res.json({ message: 'Login successful' });
+    res.json({ message: 'Login successful' , role: user.role});
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }
