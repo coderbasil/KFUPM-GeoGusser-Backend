@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import photos from "./routes/photos.js";
+import upload from "./routes/upload.js";
 
 const app = express();
 const PORT = 5000;
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/photos", photos);
+app.use("/api/upload", upload);
 
 (async () => {
   try {
