@@ -50,7 +50,7 @@ router.post("/photos", upload.single("photo"), async (req, res, next) => {
       requestBody: { role: "reader", type: "anyone" },
     });
 
-    const publicUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
+    const publicUrl = `https://drive.google.com/uc?id=${fileId}`;
 
     const photoDoc = await Photo.create({
       url: publicUrl,
